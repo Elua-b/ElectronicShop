@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// import Home from "./home";
+import "./App.css";
+import React ,{useState} from "react";
+// import About from "./about";
+//import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+  const[count,setCount]=useState(4)
+  const [theme, setTheme]=useState('number');
+  function decreamentCount(){
+    setCount(count-1)
+    setTheme();
+  }
+  function increamentCount(){
+    setCount(count+1)
+    setCount(count+1)
+    setTheme("number")
+  }
+  return(
+    <>
+    <button   onClick={decreamentCount}>-</button>
+    <span>{count}</span>
+    <span>{theme}</span>
+    <button onClick={increamentCount}>+</button>
+    
+    </>
+  )
 }
 
 export default App;
